@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block container %}
+<form class="form-control" action="" method="POST">
+    <h5>You want delete "{{ obj.name }}"?</h5>
+    {% csrf_token %} 
+    <hr>
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="{% url 'detail-todo' obj.id %}"><button type="button" class="btn btn-warning">Cancel</button></a>
+</form>
+{% endblock %}

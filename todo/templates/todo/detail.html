@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block container %}
+<h1>{{ todoDetails.name }}</h1>
+<h5>{{ todoDetails.description }}</h5>
+<hr>
+<a href="{% url 'update-todo' todoDetails.id %}"><button type="button" class="btn btn-warning">Update Todo</button></a>
+<a href="{% url 'delete-todo' todoDetails.id %}"><button type="button" class="btn btn-danger">Delete Todo</button></a>
+{% endblock %}

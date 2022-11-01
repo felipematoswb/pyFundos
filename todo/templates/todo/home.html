@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block container %}
+
+{% if todoLists %}
+    <ul>
+        {% for todoList in todoLists %}
+        <li>
+            <a href="{% url 'detail-todo' todoList.id %}">{{ todoList.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <ul>
+        <li>
+            No task here.
+        </li>
+    </ul>
+{% endif %}
+
+<a href="{% url 'create-todo' %}"><button type="button" class="btn btn-primary">Create Todo</button></a>
+{% endblock %}
